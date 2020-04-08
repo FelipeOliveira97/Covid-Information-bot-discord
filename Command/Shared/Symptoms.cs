@@ -10,14 +10,14 @@ namespace Covid_Information.Command.Shared
 {
     public class Symptoms : ModuleBase<SocketCommandContext>
     {
-        [Command("Simtomas")]
+        [Command("Sintomas")]
         public async Task SharedSymptoms()
         {
             var embed = new EmbedBuilder();
 
             var info = embed.AddField("Owner",
                        "Source Code [@FelipeOliveira97](https://github.com/FelipeOliveira97/Covid-Information-bot-discord)")
-                   .WithTitle($"Simtomas do CoronaVírus")
+                   .WithTitle($"Sintomas do CoronaVírus")
                    .WithAuthor(Context.Client.CurrentUser)
                    .WithDescription($"• Febre \r\n" +
                                        $"• Espirros \r\n" +

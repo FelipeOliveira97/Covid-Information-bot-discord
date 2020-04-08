@@ -10,6 +10,7 @@ namespace Covid_Information.Command.Shared
 {
     public class Transmission : ModuleBase<SocketCommandContext>
     {
+        [Command("Transmissão")]
         public async Task SharedTransmission()
         {
             var embed = new EmbedBuilder();

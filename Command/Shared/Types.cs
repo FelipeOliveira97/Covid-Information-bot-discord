@@ -10,6 +10,7 @@ namespace Covid_Information.Command.Shared
 {
     public class Types : ModuleBase<SocketCommandContext>
     {
+        [Command("Tipos")]
         public async Task SharedTypes()
         {
             var embed = new EmbedBuilder();
