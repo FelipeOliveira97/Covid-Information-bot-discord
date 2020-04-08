@@ -128,6 +128,11 @@
   <ItemGroup>
     <Compile Include="Command\Shared\Country.cs" />
     <Compile Include="Command\Shared\Global.cs" />
+    <Compile Include="Command\Shared\Healing.cs" />
+    <Compile Include="Command\Shared\Prevent.cs" />
+    <Compile Include="Command\Shared\Symptoms.cs" />
+    <Compile Include="Command\Shared\Transmission.cs" />
+    <Compile Include="Command\Shared\Types.cs" />
     <Compile Include="Model\MCountry.cs" />
     <Compile Include="Model\MGlobal.cs" />
     <Compile Include="Program.cs" />

@@ -40,7 +40,7 @@ namespace Covid_Information.Command.Shared
             }
 
             var info = embed.AddField("Owner",
-                    "Source Code [@FelipeOliveira97](https://github.com/felipeoliveira97)")
+                    "Source Code [@FelipeOliveira97](https://github.com/FelipeOliveira97/Covid-Information-bot-discord)")
                 .WithTitle($"Informações Globais, Atualização : {global.Date}")
                 .WithAuthor(Context.Client.CurrentUser)
                 .WithDescription($"Novos Confirmados: {global.NewConfirmed}\r\n" +
