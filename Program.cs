@@ -4,6 +4,7 @@ using Discord.WebSocket;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -25,7 +26,7 @@ namespace Covid_Information
             command = new CommandService();
             services = new ServiceCollection().AddSingleton(client).AddSingleton(command).BuildServiceProvider();
 
-            string Key = "SEUTOKEN";
+            string Key = ConfigurationManager.AppSettings["Discord"];
 
             // Get Event bot.
             client.Ready += Client_Ready;

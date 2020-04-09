@@ -14,12 +14,12 @@ namespace Covid_Information.Command.Shared
     public class Country : ModuleBase<SocketCommandContext>
     {
         [Command("País")]
-        public async Task SharedCountry(string p)
+        public async Task SharedCountry(string state)
         {
-            var _p = "";
-            if (p.ToUpper().Equals("BRASIL"))
+            var _state = state;
+            if (state.Equals("BRASIL", StringComparison.OrdinalIgnoreCase))
             {
-                _p = p.Replace(p, "Brazil"); // Gambeta temporaria 
+                _state = state.Replace(state, "Brazil"); // Gambeta temporaria 
             }
 
             MCountry country;
@@ -30,7 +30,7 @@ namespace Covid_Information.Command.Shared
             using (var client = new HttpClient())
             {
                 HttpResponseMessage response = await client.GetAsync("https://api.covid19api.com/live/country/" +
-                    $"{_p}" + "/status/confirmed");
+                    $"{_state}" + "/status/confirmed");
 
                 string responseBody = await response.Content.ReadAsStringAsync();
 
