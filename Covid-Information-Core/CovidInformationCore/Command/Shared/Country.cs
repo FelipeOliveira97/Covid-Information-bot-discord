@@ -8,6 +8,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using YandexTranslate;
 
 namespace CovidInformationCore.Command.Shared
 {
@@ -16,11 +17,15 @@ namespace CovidInformationCore.Command.Shared
         [Command("País")]
         public async Task SharedCountry(string state)
         {
-            var _state = state;
-            if (state.Equals("BRASIL", StringComparison.OrdinalIgnoreCase))
-            {
-                _state = state.Replace(state, "Brazil"); // Gambeta temporaria 
-            }
+
+            YandexTranslator wrapper = new YandexTranslator();
+
+            var translate = wrapper.translate(state, "TOKENTRANSLATE", "pt", "en");
+
+            //if (state.Equals("BRASIL", StringComparison.OrdinalIgnoreCase))
+            //{
+            //    _state = state.Replace(state, "Brazil"); // Gambeta temporaria 
+            //}
 
             MCountry country;
             country = new MCountry();
@@ -30,7 +35,7 @@ namespace CovidInformationCore.Command.Shared
             using (var client = new HttpClient())
             {
                 HttpResponseMessage response = await client.GetAsync("https://api.covid19api.com/live/country/" +
-                    $"{_state}" + "/status/confirmed");
+                    $"{translate}" + "/status/confirmed");
 
                 string responseBody = await response.Content.ReadAsStringAsync();
 

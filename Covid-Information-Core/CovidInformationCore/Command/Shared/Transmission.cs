@@ -16,7 +16,7 @@ namespace CovidInformationCore.Command.Shared
             var embed = new EmbedBuilder();
 
             var info = embed.AddField("Owner",
-                       "Source Code [@FelipeOliveira97](https://github.com/FelipeOliveira97/Covid-Information-bot-discord)")
+                       "Source Code [@Covid-Information-bot-discord](https://github.com/FelipeOliveira97/Covid-Information-bot-discord)")
                    .WithTitle($"Transmissões;")
                    .WithAuthor(Context.Client.CurrentUser)
                    .WithDescription($"• Contato com objetos ou superfícies contaminadas, seguido de contato com a boca, nariz ou olhos; \r\n" +
