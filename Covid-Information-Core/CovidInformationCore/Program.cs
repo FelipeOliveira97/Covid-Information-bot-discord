@@ -26,7 +26,7 @@ namespace CovidInformationCore
             command = new CommandService();
             services = new ServiceCollection().AddSingleton(client).AddSingleton(command).BuildServiceProvider();
 
-            string Key = "Njk3MTM5MzQwMTc3ODM0MDQ1.XpDVzw.isGKWBHPgzdLNhc3ML0kJDwbTuc";
+            string Key = "";
 
             // Get Event bot.
             client.Ready += Client_Ready;
